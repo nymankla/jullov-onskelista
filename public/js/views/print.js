@@ -11,7 +11,7 @@ function printDay(d) {
   const day = state.days[d] ?? { cook: '', note: '' };
   const entries = state.plan.filter((p) => p.date === d).sort(byDateMeal);
   return html`<section class="p-day ${isHelg(d) ? 'helg' : ''}">
-    <h3>${capital(weekday(d))} ${formatDate(d)}${isHelg(d) ? html` <small>Julhelg</small>` : ''}</h3>
+    <h3>${capital(weekday(d))} ${formatDate(d)}${isHelg(d) ? html` <small>🎄 Julhelg</small>` : ''}</h3>
     ${day.cook ? html`<p class="p-cook">Kock: ${day.cook}</p>` : ''}
     ${day.note ? html`<p class="p-note">${day.note}</p>` : ''}
     ${entries.length

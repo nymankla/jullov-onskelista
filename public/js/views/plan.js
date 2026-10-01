@@ -22,7 +22,7 @@ function dayCard(d) {
   return html`<article class="card day ${isHelg(d) ? 'helg' : ''}" data-date="${d}">
     <header class="day-head">
       <h3>${capital(weekday(d))} <span class="date">${formatDate(d)}</span></h3>
-      ${isHelg(d) ? html`<span class="ribbon">Julhelg</span>` : ''}
+      ${isHelg(d) ? html`<span class="ribbon">🎄 Julhelg</span>` : ''}
     </header>
     <div class="day-meta">
       <label class="field inline"><span>Kock</span>

@@ -27,7 +27,7 @@ function card(w) {
     <button class="wish-main" data-act="wish-open" data-id="${w.id}">
       ${w.image
         ? html`<img class="thumb" src="${w.image}" alt="" loading="lazy">`
-        : html`<span class="thumb ph" aria-hidden="true">✦</span>`}
+        : html`<span class="thumb ph" aria-hidden="true">🎁</span>`}
       <span class="wish-text">
         <span class="wish-title">${w.title}</span>
         <span class="wish-meta">${w.wishedBy ? `Önskad av ${w.wishedBy}` : 'Önskad rätt'}${w.ingredients.length ? ' · med recept' : ''}</span>
