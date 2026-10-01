@@ -1,0 +1,24 @@
+{
+  "name": "jullov-onskelista",
+  "version": "1.0.0",
+  "description": "Familjens matönskelista för jullovet – webbapp för webbläsare och iPad",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "icons": "node scripts/make-icons.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Jullovets matönskelista",
+  "short_name": "Julmat",
+  "description": "Familjens önskelista över maten vi vill laga under jullovet",
+  "lang": "sv",
+  "start_url": "/#/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1d4b38",
+  "theme_color": "#1d4b38",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Dagsplan", "url": "/#/plan", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

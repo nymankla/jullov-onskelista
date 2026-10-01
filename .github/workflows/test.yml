@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Servern startar och svarar
+        run: |
+          DATA_DIR=$(mktemp -d) node server/index.js &
+          for i in $(seq 1 20); do curl -fsS http://localhost:3000/healthz && break; sleep 1; done
+          curl -fsS http://localhost:3000/api/state > /dev/null

@@ -1,0 +1,17 @@
+/* Utskrift: bara dagsplanen, utan knappar och menyer */
+@page { size: A4; margin: 14mm; }
+
+body { background: #fff; color: #000; font-size: 11pt; }
+.no-print, .topbar, .offline, #toast-root, #modal-root, .skip { display: none !important; }
+.main { max-width: none; padding: 0; }
+.sheet-paper { border: 0; box-shadow: none; padding: 0; border-radius: 0; }
+.p-title { font-size: 26pt; }
+.p-days { columns: 2; column-gap: 12mm; }
+.p-day { break-inside: avoid; page-break-inside: avoid; }
+.p-wishes { break-before: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* På övriga sidor skrivs bara det som ligger i listan ut */
+.btn, .heart, .toolbar, .seg { display: none !important; }
+.cards { display: block; }
+.card { box-shadow: none; break-inside: avoid; margin-bottom: 6mm; }
