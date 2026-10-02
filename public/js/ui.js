@@ -8,6 +8,8 @@ export const ui = {
   filter: 'alla', // alla | oplanerade | planerade
   sort: 'populara', // populara | nyast | namn
   planTab: 'alla', // alla | helg | lov
+  handlaDays: [], // valda datum för inköpslistan
+  handlaChecked: new Set(), // ikryssade varor, nyckel "planId:index"
   modal: null, // { type, ...data }
   toast: null, // { text, undo? }
 };

@@ -3,6 +3,7 @@ import { state, load, refreshIfChanged, onChange } from './api.js';
 import { ui, closeModal, hideToast, showToast, openModal } from './ui.js';
 import { wishesPage, wishActions, wishInputs, wishChanges } from './views/wishes.js';
 import { planPage, planActions, planChanges } from './views/plan.js';
+import { handlaPage, handlaActions, handlaChanges } from './views/handla.js';
 import { printPage, printActions } from './views/print.js';
 import { settingsPage, settingsActions, settingsSubmits } from './views/settings.js';
 import { FORM_MODALS, modalHtml, modalActions, modalSubmits } from './views/modals.js';
@@ -10,13 +11,14 @@ import { FORM_MODALS, modalHtml, modalActions, modalSubmits } from './views/moda
 const ROUTES = {
   '': { page: wishesPage, title: 'Önskelista' },
   plan: { page: planPage, title: 'Dagsplan' },
+  handla: { page: handlaPage, title: 'Handla' },
   'skriv-ut': { page: printPage, title: 'Skriv ut' },
   installningar: { page: settingsPage, title: 'Inställningar' },
 };
-const TABS = [['', 'Önskelista', '♥'], ['plan', 'Dagsplan', '▦'], ['skriv-ut', 'Skriv ut', '⎙'], ['installningar', 'Inställningar', '⚙']];
+const TABS = [['', 'Önskelista', '♥'], ['plan', 'Dagsplan', '▦'], ['handla', 'Handla', '▤'], ['skriv-ut', 'Skriv ut', '⎙'], ['installningar', 'Inställningar', '⚙']];
 
 const actions = {
-  ...wishActions, ...planActions, ...printActions, ...settingsActions, ...modalActions,
+  ...wishActions, ...planActions, ...handlaActions, ...printActions, ...settingsActions, ...modalActions,
   async 'toast-undo'() {
     const undo = ui.toast?.undo;
     hideToast();
@@ -25,7 +27,7 @@ const actions = {
   'who-open': () => openModal({ type: 'who' }),
   reload: () => location.reload(),
 };
-const changes = { ...wishChanges, ...planChanges };
+const changes = { ...wishChanges, ...planChanges, ...handlaChanges };
 const inputs = { ...wishInputs };
 const submits = { ...settingsSubmits, ...modalSubmits };
 
